@@ -5,10 +5,14 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require('express');
 const app = express();
+app.set('view engine', 'pug');
+app.set('views', './views');
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get('/todos', (request, response) => {
-  response.send('<html><ul><li>Đi chợ</li><li>Nấu cơm</li><li>Rửa bát</li><li>Học code tại CodersX</li></ul></html>');
+  response.render('index', {
+    list: ['Đi chợ', 'Nấu cơm', 'Rửa bát', 'Học code tại CodersX']
+  });
 });
 
 // listen for requests :)
