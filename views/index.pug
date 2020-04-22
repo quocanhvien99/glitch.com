@@ -1,3 +1,4 @@
-ul
-  each x in list
-    li= x
+form(action="/todos", method="GET")
+  input(type="text", name="q")
+  button Search
+  
